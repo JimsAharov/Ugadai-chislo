@@ -42,16 +42,16 @@
 // (ab == 3) && alert("Угадал!");
 // ab <= 2 && alert("Больше");
 // ab >= 4 && ab <= 100 && alert("Меньше");
-for (ab = prompt('Vvedite chislo');  ; ab = prompt('Vvedite chislo')) {
+for (ab = prompt('Введите число от 1 до 100');  ; ab = prompt('Введите число от 1 до 100')) {
 
-if (ab == 3){
-	alert('ugadal');
-	}	else if (ab <= 2) {
-		alert('bolshe');
-	}   else if (ab >= 4){
-		alert('menshe')
+if (ab == 39){
+	alert('Правильно, Угадал!');
+	}	else if (ab <= 38) {
+		alert('Загаданное число Больше');
+	}   else if (ab >= 40){
+		alert('Загаданное число Меньше')
 	}
-if (ab ==3) break;
+if (ab ==39) break;
 }
 
 
