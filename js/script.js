@@ -36,22 +36,51 @@
 // (users > 100) && console.log(`Пользователей слишком много`);
 
 
-// /*Компьютер загадывает число 3  Изучить циклы, пока не могу сделать игру*/
-// alert("Игра 'Угадай число от 1 до 100'");
-//let ab = prompt("Введите число");
-// (ab == 3) && alert("Угадал!");
-// ab <= 2 && alert("Больше");
-// ab >= 4 && ab <= 100 && alert("Меньше");
-for (ab = prompt('Введите число от 1 до 100');  ; ab = prompt('Введите число от 1 до 100')) {
 
-if (ab == 39){
-	alert('Правильно, Угадал!');
-	}	else if (ab <= 38) {
-		alert('Загаданное число Больше');
-	}   else if (ab >= 40){
-		alert('Загаданное число Меньше')
+
+// Игра Угадай Число 1й вариант:
+// for (ab = prompt('Введите число от 1 до 100');  ; ab = prompt('Введите число от 1 до 100')) {
+
+// if (ab == 39){
+// 	alert('Правильно, Угадал!');
+// 	}	else if (ab <= 38) {
+// 		alert('Загаданное число Больше');
+// 	}   else if (ab >= 40){
+// 		alert('Загаданное число Меньше')
+// 	}
+// if (ab ==39) break;
+// }
+
+
+// Игра Угадай число со счётчиком попыток:
+
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+  }
+
+let randNum = getRandomInt(1,99)
+let i = 1
+
+
+while (i<=7 || randNum == inputNum) {
+	inputNum = prompt('Vvedite chislo')
+	if (inputNum != randNum) {
+		if (inputNum > randNum) {
+			alert(`Введенное число БОЛЬШЕ загаданного, попытка ${i}`)
+		} else {
+			alert(`Введенное число МЕНЬШЕ загаданного, попытка ${i}`)
+		}
+	} else {
+		alert(`Вы угадали число ${randNum}`)
+		break
 	}
-if (ab ==39) break;
+	i++
+}
+
+if (i == 8) {
+	alert("Вы не угадали число")
 }
 
 
